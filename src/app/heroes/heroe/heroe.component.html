@@ -1,0 +1,21 @@
+<h4>{{nombre}}</h4>
+
+<dl>
+    <td>Nombre:</td>
+    <dd>{{nombre}}</dd>
+
+    <td>Edad:</td>
+    <dd>{{edad}}</dd>
+</dl>
+
+<button *ngIf="nombre !== 'Spiderman'" (click)="cambiarNombre()" class="btn btn-primary mx-2">
+    cambiar nombre
+</button>
+
+<button (click)="cambiarEdad()" class="btn btn-primary">
+    cambiar edad
+</button>
+
+<button (click)="reiniciar()" class="btn btn-primary mx-2">
+    Reiniciar
+</button>

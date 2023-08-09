@@ -1,0 +1,15 @@
+<h5>Listado</h5>
+<ul class="list-group">
+    <li *ngFor="let personaje of listadoCaracter; let i = index"
+        class="list-group-item d-flex justify-content-between align-items-center"
+        [ngClass]="{'list-group-item-success': true}">
+        <div>
+            <span class="text-primary">{{i + 1}}. </span>
+            <span>{{personaje.nombre}}</span>
+            <strong> - Poder: </strong>
+            <span>{{personaje.poder}}</span>
+        </div>
+
+        <button (click)="onDeletePersonaje(personaje.id)" class="btn btn-danger">X</button>
+    </li>
+</ul>

@@ -1,0 +1,25 @@
+<hr>
+<h3 class="mt-4">Lista de heroes.</h3>
+
+<div *ngIf="deletedHeroe; else noDeletedHeroe">
+    <h6>Heroe eliminado <small class="text-danger">{{deletedHeroe}}</small></h6>
+</div>
+
+<ng-template #noDeletedHeroe>
+    <h6>No ha elimando heroes</h6>
+</ng-template>
+
+<table class="table">
+    <thead>
+        <tr class="table-primary">
+            <th>Nombre</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let heroe of heroes">
+        <td>{{heroe}}</td>
+    </tbody>
+</table>
+
+<button *ngIf="heroes.length > 0" (click)="borrarHeroe()" class="btn btn-danger">
+    Borrar heroe
+</button>
